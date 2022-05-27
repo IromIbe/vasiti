@@ -1,14 +1,20 @@
 .home {
   width: 100%;
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 80px;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  @media only screen and (max-width: 600px) {
+    padding: unset;
+  }
 
   .nav-links {
     flex: 1;
@@ -22,6 +28,10 @@
     .link {
       list-style-type: none;
       padding: 0 10px;
+      @media only screen and (max-width: 600px) {
+        padding: unset;
+        margin: 0 3px;
+      }
 
       button {
         font-family: "Roboto";
@@ -38,7 +48,7 @@
         font-size: 13px;
         background: transparent;
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 600px) {
           font-size: 8px;
         }
       }
@@ -77,7 +87,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: 12px 0;
+  padding: 14px 0;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.04);
 
@@ -100,13 +110,13 @@
       font-size: 13px;
       background: transparent;
 
-      @media only screen and (max-width: 680px) {
-        font-size: 9px;
+      @media only screen and (max-width: 600px) {
+        font-size: 8px;
       }
     }
   }
 
-  @media only screen and (max-width:500px) {
+  @media only screen and (max-width: 500px) {
     display: none;
   }
 }
