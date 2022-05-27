@@ -34,7 +34,7 @@
       }
 
       button {
-        font-family: "Roboto";
+        font-family: "Roboto", sans-serif;
         font-style: normal;
         font-weight: 500 !important;
         font-size: 13px;
@@ -44,7 +44,6 @@
         border: none;
         outline: none;
         font-style: normal;
-        font-weight: 500;
         font-size: 13px;
         background: transparent;
 
@@ -88,6 +87,8 @@
   justify-content: center;
   align-items: center;
   padding: 14px 0;
+  position: sticky;
+  top: 0;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.04);
 
@@ -120,3 +121,28 @@
     display: none;
   }
 }
+.space{
+  width: 100%;
+  .text {
+    h4 {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 70px;
+      letter-spacing: -0.05em;
+      color: #000000;
+    }
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 31px;
+      letter-spacing: 0.02em;
+
+      color: #494949;
+    }
+  }
+}
+
