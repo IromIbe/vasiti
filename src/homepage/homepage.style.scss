@@ -15,7 +15,11 @@
   @media only screen and (max-width: 600px) {
     padding: unset;
   }
-
+  .logo {
+    @media only screen and (max-width: 500px) {
+      margin: 25px 16px;
+    }
+  }
   .nav-links {
     flex: 1;
   }
@@ -121,9 +125,12 @@
     display: none;
   }
 }
-.space{
+.space {
   width: 100%;
+  padding-bottom: 30px;
   .text {
+    padding-bottom: 15px;
+
     h4 {
       font-family: "Inter", sans-serif;
       font-style: normal;
@@ -134,15 +141,22 @@
       color: #000000;
     }
     p {
-      font-family: "Inter";
+      font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500 !important;
       font-size: 18px;
       line-height: 31px;
       letter-spacing: 0.02em;
 
       color: #494949;
     }
+    @media only screen and (max-width: 768px) {
+      //  margin-top: 20px !important;
+      margin-left: 35px !important;
+    }
+    @media only screen and (max-width: 400px) {
+      //  margin-top: 20px !important;
+      margin-left: 6px !important;
+    }
   }
 }
-

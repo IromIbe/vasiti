@@ -50,9 +50,9 @@ function Homepage() {
         </li>
       </div>
 
-        <div className='space d-md-flex justify-content-center mt-md-3 mt-sm-5 align-items-center px-md-5'>
+        <div className='space d-md-flex justify-content-md-center mt-xs-5 mt-md-3  align-items-md-center px-md-5'>
 
-          <div className='text justify-content-md-center ms-5 ps-4' >
+          <div className='text ms-md-5 ps-md-4 t-xs-5' >
             <h4>Amazing <br></br> Experiences from Our Wonderful Customers</h4>
             <p>
               Here is what customers and vendors are saying about us, you can
