@@ -1,34 +1,11 @@
 import React from "react";
 import "./homepage.style.scss";
-import { Container, Row, Col } from "react-bootstrap";
+import Header from "../header/header";
 
 function Homepage() {
   return (
     <div className='home'>
-      <nav className='nav-bar'>
-        <div className='logo'>
-          <img src='/assets/vasiti-logo.svg' alt='' />
-        </div>
-        <div className='nav-links'>
-          <ul className='links'>
-            <li className='link'>
-              <button href='#'>About Us</button>
-            </li>
-            <li className='link'>
-              <button>Stories</button>
-            </li>
-            <li className='link'>
-              <button>Contact</button>
-            </li>
-            <li className='link'>
-              <button>Log In</button>
-            </li>
-            <li className='link'>
-              <button className='color'>Sign Up</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Header/>
       <div className='heading'>
         <li className='sub-link'>
           <button>MARKETPLACE</button>
@@ -50,20 +27,21 @@ function Homepage() {
         </li>
       </div>
 
-        <div className='space d-md-flex justify-content-md-center mt-xs-5 mt-md-3  align-items-md-center px-md-5'>
-
-          <div className='text ms-md-5 ps-md-4 t-xs-5' >
-            <h4>Amazing <br></br> Experiences from Our Wonderful Customers</h4>
-            <p>
-              Here is what customers and vendors are saying about us, you can
-              share your stories with us too.
-            </p>
-          </div>
-          <div className='pic px-me-5 d-flex justify-content-center align-items-center'>
-            <img src='/assets/intro-pic.svg' alt='' />
-          </div>
+      <div className='space d-md-flex justify-content-md-center mt-xs-5 mt-md-3  align-items-md-center px-md-5'>
+        <div className='text ms-md-5 ps-md-4 t-xs-5'>
+          <h4>
+            Amazing <br></br> Experiences from Our Wonderful Customers
+          </h4>
+          <p>
+            Here is what customers and vendors are saying about us, you can
+            share your stories with us too.
+          </p>
         </div>
-
+        <div className='pic px-me-5 d-flex justify-content-center align-items-center'>
+          <img src='/assets/intro-pic.svg' alt='' />
+        </div>
+      </div>
+      <div className='experience d-flex justify-content-md-center mt-xs-5 mt-md-3  align-items-md-center'></div>
     </div>
   );
 }
