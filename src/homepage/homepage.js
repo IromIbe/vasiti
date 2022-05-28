@@ -1,11 +1,12 @@
 import React from "react";
 import "./homepage.style.scss";
-import Header from "../header/header";
+import Header from "../login/header/header";
+import Review from "../review/review";
 
 function Homepage() {
   return (
     <div className='home'>
-      <Header/>
+      <Header />
       <div className='heading'>
         <li className='sub-link'>
           <button>MARKETPLACE</button>
@@ -32,7 +33,7 @@ function Homepage() {
           <h4>
             Amazing <br></br> Experiences from Our Wonderful Customers
           </h4>
-          <p>
+          <p className="me-3">
             Here is what customers and vendors are saying about us, you can
             share your stories with us too.
           </p>
@@ -41,7 +42,28 @@ function Homepage() {
           <img src='/assets/intro-pic.svg' alt='' />
         </div>
       </div>
-      <div className='experience d-flex justify-content-md-center mt-xs-5 mt-md-3  align-items-md-center'></div>
+      <div className='experience pt-5  mt-md-3'>
+        <div className='pic mx-5'>
+          <img src='/assets/ladies.svg' alt='' width='500px' />
+        </div>
+        <div className='experience-text d-flex flex-column justify-content-start'>
+          <h4>Tolu & Joy’s Experience</h4>
+          <button>CUSTOMER</button>
+          <p className='mt-4'>
+            I had the best experience shopping with vasiti. Usability of the
+            website was great, very good customer service, an all round great
+            experience. I would definately be coming back! I had the best
+            experience shopping with vasiti. Usability of the website was great,
+            very good customer service, an all round great experience. I would
+            definately be coming back!
+          </p>
+          <div className='line'>
+            <p>Share your own story!</p>
+            <img src='/assets/line.svg' alt='' />
+          </div>
+        </div>
+      </div>
+      <Review />
     </div>
   );
 }

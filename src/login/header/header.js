@@ -11,7 +11,10 @@ export default function Header() {
       <div className='nav-links'>
         <ul className='links'>
           <li className='link'>
-            <button href='#'>About Us</button>
+            <Link to="/"><button>Home</button></Link>
+          </li>
+          <li className='link'>
+            <button>About Us</button>
           </li>
           <li className='link'>
             <button>Stories</button>
