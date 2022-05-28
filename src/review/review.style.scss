@@ -1,0 +1,40 @@
+.review-cont {
+  padding: 2.5% 8%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+// grid-gap: 20px;
+
+@media only screen and (max-width: 300px) {
+padding: unset;
+}
+  .person {
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
+    h4 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+      color: #474747;
+    }
+    .state-role {
+      span {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0.05em;
+
+        color: #535353;
+      }
+      .role {
+        background: #eef8ff;
+        color: #0d019a;
+        border-radius: 4px;
+        padding: 2px 0;
+      }
+    }
+  }
+}
