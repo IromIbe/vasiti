@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import "./homepage.style.scss";
-import Header from "../login/header/header";
+import Header from "../header/header";
 import Review from "../review/review";
+import Modal from "../modal/modal";
+import ThreadModal from "../modal/modal";
 
 function Homepage() {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   return (
     <div className='home'>
       <Header />
@@ -57,10 +62,12 @@ function Homepage() {
             very good customer service, an all round great experience. I would
             definately be coming back!
           </p>
-          <div className='line'>
+          <div className='line'  onClick={() => handleShow()}>
             <p>Share your own story!</p>
             <img src='/assets/line.svg' alt='' />
           </div>
+      <ThreadModal show={show} handleClose={handleClose} />
+
         </div>
       </div>
       <Review />

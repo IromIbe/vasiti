@@ -1,0 +1,111 @@
+.content {
+  background-color: #fff;
+  .title {
+    h4 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: #000000;
+      //   padding: 12px 0;
+    }
+  }
+  form {
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: 0.04em;
+      font-family: "Roboto";
+      color: #676767;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      margin: 10px 0;
+      &::placeholder {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+
+        letter-spacing: 0.05em;
+
+        color: #676767;
+      }
+      &[type="text"]:focus {
+        outline: 1px solid #ff5c00;
+      }
+    }
+    .upload {
+      position: relative;
+      width: 100%;
+      //   border: 1px solid red;
+      display: flex;
+      //   flex-direction: row;
+
+      span {
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        right: 30px;
+      }
+    }
+    .fullname {
+      width: 100%;
+      label {
+        flex: 0.8 !important;
+      }
+    }
+    textarea {
+      margin-top: 13px;
+      margin-bottom: 20px;
+      height: 100px;
+      outline: none;
+      background: rgba(254, 254, 254, 0.3);
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      padding: 13px 20px;
+
+      &:focus {
+        outline: 1px solid #ff5c00;
+      }
+      &#file-upload-button {
+        display: none;
+        padding: 20px;
+      }
+    }
+    input[type="radio"] {
+      width: unset;
+    }
+    .dual-role {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      background-color: #ff5c00;
+      outline: none;
+      border: none;
+      padding: 8px 13px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      line-height: 32px;
+     text-align: end;
+    }
+  }
+}
