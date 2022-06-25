@@ -1,6 +1,5 @@
 import React from "react";
 import "./header.style.scss";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -11,7 +10,7 @@ export default function Header() {
       <div className='nav-links'>
         <ul className='links'>
           <li className='link'>
-            <Link to="/"><button>Home</button></Link>
+            <button>Home</button>
           </li>
           <li className='link'>
             <button>About Us</button>
@@ -23,19 +22,11 @@ export default function Header() {
             <button>Contact</button>
           </li>
           <li className='link'>
-            <Link to='login'>
+            <button>
               <button>Log In</button>
-            </Link>
+            </button>
           </li>
           <li className='link'>
-            <button className='color'>Sign Up</button>
-          </li>
-          <li className='mobile-link'>
-            <Link to='login'>
-              <button className='color'>Log In</button>
-            </Link>
-          </li>
-          <li className='mobile-link'>
             <button className='color'>Sign Up</button>
           </li>
         </ul>

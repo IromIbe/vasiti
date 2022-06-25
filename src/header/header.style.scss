@@ -25,47 +25,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    .mobile-link {
-      display: none;
-      @media only screen and (max-width: 500px) {
-        // flex: 1;
-        display: block;
-        list-style-type: none;
-        padding: 0 10px;
-        button {
-          font-family: "Roboto", sans-serif;
-          font-style: normal;
-          font-weight: 500 !important;
-          font-size: 13px;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: #242120;
-          border: none;
-          outline: none;
-          font-style: normal;
-          font-size: 13px;
-          background: transparent;
-        }
-        .color {
-          background: #ff5c00;
-          color: white;
-          text-transform: uppercase;
-          box-shadow: 1px 4px 8px rgba(239, 88, 3, 0.2);
-          border-radius: 4px;
-          margin-left: -6px;
-          padding: 7px 15px;
-          transition: background 0.2s;
-          &:hover {
-            background-color: white;
-            color: #ff5c00;
-            border: 1px solid #ff5c00;
-          }
-        }
-        :hover {
-          color: #ff5c00;
-        }
-      }
-    }
 
     .link {
       list-style-type: none;

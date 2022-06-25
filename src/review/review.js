@@ -1,78 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./review.style.scss";
+import { db } from "../firebase/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
-const reviewData = [
-  {
-    url: "/assets/ladies.svg",
-    name: "Joseph Ike",
-    state: "Ibadan",
-    role: "vendor",
-    message:
-      "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-  },
-    {
-      url: "/assets/ladies.svg",
-      name: "Joseph Ike",
+function Review({ firstTestimonies, lastTestimonies }) {
+  const [testimonies, setTestimonies] = useState([]);
 
-      state: "Ibadan",
-      role: "vendor",
-      message:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-    {
-      url: "/assets/ladies.svg",
-      name: "Joseph Ike",
+  useEffect(() => {
+    const getTestimonies = async () => {
+      const collectionRef = collection(db, "messages");
+      const data = await getDocs(collectionRef);
 
-      state: "Ibadan",
-      role: "vendor",
-      message:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-    {
-      url: "/assets/ladies.svg",
-      name: "Joseph Ike",
-
-      state: "Ibadan",
-      role: "vendor",
-      message:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-    {
-      url: "/assets/ladies.svg",
-      name: "Joseph Ike",
-
-      state: "Ibadan",
-      role: "vendor",
-      message:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-    {
-      url: "/assets/ladies.svg",
-      name: "Joseph Ike",
-
-      state: "Ibadan",
-      role: "vendor",
-      message:
-        "Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-    },
-];
-
-function Review() {
+      setTestimonies(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getTestimonies();
+  }, []);
+  const filteredTestimony = testimonies.filter((testimony) => testimony.pic);
   return (
-    <div className='review-cont'>
-      {reviewData.map((item) => (
-
-          <div className='person d-flex flex-column px-sm-3 mx-3 align-items-start'>
-            <img src={item.url} alt='' className='mb-4' />
-            <h4>{item.name}</h4>
+    <div className='review-cont px-4 mx-4 mt-5'>
+      {firstTestimonies &&
+        filteredTestimony.slice(0, 6).map((testimony) => (
+          <div className='person d-flex flex-column px-sm-3 mx-3 mb-2 align-items-start'>
+            <img src={testimony.pic} alt='' className='mb-4' />
+            <h4>
+              {testimony.firstName} {testimony.lastName}
+            </h4>
             <div className='state-role d-flex justify-content-between align-items-center'>
-              <span className="pe-3">{item.state}</span>
-              <span className="role px-3">{item.role}</span>
+              <span className='pe-2'>{testimony.location}</span>
+              <span
+                className={`role px-3 ${
+                  testimony.role === "customer" ? "customer" : "vendor"
+                }`}
+              >
+                {testimony.role}
+              </span>
             </div>
-            <p className="pt-4 me-2">{item.message}</p>
+            <p className='pt-4 me-2'>{testimony.message}</p>
           </div>
-
-      ))}
+        ))}
+      {lastTestimonies &&
+        filteredTestimony
+          .slice(6, filteredTestimony.length)
+          .map((testimony) => (
+            <div className='person d-flex flex-column px-sm-3 mx-3 mb-2 align-items-start'>
+              <img src={testimony.pic} alt='' className='mb-4' />
+              <h4>
+                {testimony.firstName} {testimony.lastName}
+              </h4>
+              <div className='state-role d-flex justify-content-between align-items-center'>
+                <span className='pe-2'>{testimony.location}</span>
+                <span
+                  className={`role px-3 ${
+                    testimony.role === "customer" ? "customer" : "vendor"
+                  }`}
+                >
+                  {testimony.role}
+                </span>
+              </div>
+              <p className='pt-4 me-2'>{testimony.message}</p>
+            </div>
+          ))}
     </div>
   );
 }

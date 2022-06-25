@@ -1,16 +1,17 @@
 .review-cont {
-  padding: 2.5% 8%;
+  // padding: 2.5% 15%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-// grid-gap: 20px;
+  justify-content: center;
+  grid-gap: 20px;
 
-@media only screen and (max-width: 300px) {
-padding: unset;
-}
+  @media only screen and (max-width: 300px) {
+    padding: unset;
+  }
   .person {
     img {
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
     }
     h4 {
@@ -19,6 +20,7 @@ padding: unset;
       font-size: 22px;
       letter-spacing: 0.02em;
       color: #474747;
+      text-transform: capitalize;
     }
     .state-role {
       span {
@@ -30,11 +32,20 @@ padding: unset;
         color: #535353;
       }
       .role {
+        border-radius: 4px;
+        padding: 1.8px 0;
+      }
+      .customer {
         background: #eef8ff;
         color: #0d019a;
-        border-radius: 4px;
-        padding: 2px 0;
+      }
+      .vendor {
+        color: #049a01;
+        background: #f0ffee;
       }
     }
+  }
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
