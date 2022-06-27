@@ -18,7 +18,7 @@ function Footer() {
               Vasiti <br />
               —thus, the world.
             </p>
-            <div className='send-mail d-flex justify-content-between align-items-center'>
+            <div className='send-mail d-flex justify-content-center align-items-center'>
               <input type='email' placeholder='enter your email address' />
               <button>SUBSCRIBE</button>
             </div>
